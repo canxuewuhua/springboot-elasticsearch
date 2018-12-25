@@ -4,8 +4,10 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
 
+import java.io.Serializable;
+
 @Document(indexName = "company",type = "employee", shards = 1,replicas = 0, refreshInterval = "-1")
-public class Employee {
+public class Employee implements Serializable {
     @Id
     private String id;
     @Field

@@ -26,7 +26,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.version>1.8</java.version>
-    <springBoot>2.1.1.RELEASE</springBoot>
+    <springBoot>1.5.9.RELEASE</springBoot>
     <jest.version>5.3.3</jest.version>
   </properties>
 

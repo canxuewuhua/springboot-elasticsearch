@@ -2,17 +2,19 @@ package com.pancm;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.elasticsearch.repository.config.EnableElasticsearchRepositories;
 
 /**
- * 
-* @Title: App
-* @Description:
-* 主程序入口 
-* @Version:1.0.0  
-* @author pancm
-* @date 2018年1月9日
+ *
+ * @Title: App
+ * @Description:
+ * 主程序入口
+ * @Version:1.0.0
+ * @author pancm
+ * @date 2018年1月9日
  */
 @SpringBootApplication
+@EnableElasticsearchRepositories
 public class App 
 {
     public static void main( String[] args )

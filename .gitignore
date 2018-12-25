@@ -2,6 +2,7 @@
 *.iml
 target
 log/
+logs/
 out
 .project
 .settings/

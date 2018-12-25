@@ -132,6 +132,6 @@ public class EmployeeController {
         // 开区间
         QueryBuilder query11 = QueryBuilders.rangeQuery("age").gt(10).lt(20);
 
-        return query.getName();
+        return null;
     }
 }
