@@ -17,7 +17,7 @@ public class TestReport {
         QueryBuilder queryBuilder = QueryBuilders.matchPhraseQuery("contract_name", "压测-现金贷产品-自动化-Automation4-20181213103634349");//搜索name为kimchy的数据
         //(2)执行查询
         SearchResponse searchResponse = es.searcher(indexName, typeName,
-                queryBuilder);
+                queryBuilder,2,2);
         //(3)解析结果
         SearchHits hits = searchResponse.getHits();
         SearchHit[] searchHits = hits.getHits();

@@ -2,11 +2,13 @@ package com.pancm.util;
 
 import org.elasticsearch.action.index.IndexRequestBuilder;
 import org.elasticsearch.action.search.SearchResponse;
+import org.elasticsearch.action.search.SearchType;
 import org.elasticsearch.action.update.UpdateRequest;
 import org.elasticsearch.client.Client;
 import org.elasticsearch.client.transport.TransportClient;
 import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.common.transport.InetSocketTransportAddress;
+import org.elasticsearch.common.unit.TimeValue;
 import org.elasticsearch.index.query.QueryBuilder;
 
 import java.net.InetAddress;
@@ -56,10 +58,10 @@ public class ElasticsearchUtils {
      * @param queryBuilder 查询条件
      * @return
      */
-    public SearchResponse searcher(String indexName, String typeName,
-                                   QueryBuilder queryBuilder) {
+    public SearchResponse   searcher(String indexName, String typeName,
+                                   QueryBuilder queryBuilder, int pageSize, int pageNumber) {
         SearchResponse searchResponse = client.prepareSearch(indexName)
-                .setTypes(typeName).setQuery(queryBuilder).execute()
+                .setTypes(typeName).setFrom(pageSize*(pageNumber-1)).setSize(pageSize).setQuery(queryBuilder).execute()
                 .actionGet();//执行查询
         return searchResponse;
     }
